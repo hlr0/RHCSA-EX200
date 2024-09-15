@@ -1,0 +1,3 @@
+Question 22: (Disks)
+========================
+Create a standard xfs partition of 5GB and make it available permanent

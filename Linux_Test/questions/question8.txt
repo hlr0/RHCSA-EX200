@@ -1,0 +1,15 @@
+Question 8: (USERS / ACL / SUDOERS)
+========================
+create the following users, groups, and group membership
+- all new users should have a file named “Welcome” in their home folder after account
+creation that says – “welcome to redhat training 101” when logged into account
+- all user passwords should expire after 60 days for future user creation and any user created
+- a group named "sysadm"
+- a user “harry” who belongs to "sysadm” as a secondary group
+- a user “natasha” who belongs to "sysadm" as a secondary group
+- a user “sarah” who does not have access to an interactive shell & who is not a member of "sysadm" group
+- “harry”, “natasha”, and “sarah” should all have the password of password
+- “sysadm" group has access to add user in the server
+- “harry” user has access to set password for users without asking sudo password
+- phil and laura should be part of the “accounting group”
+- steward and kevin should be part of the “marketing group”

@@ -1,0 +1,10 @@
+Question 11: (NFS - AUTOFS)
+========================
+Configure autofs to automount the home directories of netuserX user. Note the following:
+- if you do not have a seperate server you can use your own localhost for this
+- netuserX home directory is exported via NFS which is available on “192.168.0.91”
+- (192.168.0.91) and your NFS-exports directory is “/netdir” for “netuserX”,
+- netuserX home directory is “192.168.0.91:/home/guests/netuserX”
+- netuserX home directory should be automounted autofs service
+- home directories must be writable by there users
+- password for “netuser” is “ablerate”

@@ -1,0 +1,3 @@
+Question 24: (VDO)
+========================
+Use the appropriate utility to create a 50Gb thin provisioned volume

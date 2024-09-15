@@ -1,0 +1,9 @@
+Question 13: (file permissions)
+========================
+Copy the file /etc/fstab/ to /var/tmp. Configure the permissions of /var/tmp/fstab so that
+- the file /var/tmp/fstab is owned by the root user
+- the file /var/tmp/fstab belongs to the group root
+- the file /var/tmp/fstab should not be executable by anyone
+- the user “natasha” is able to read and write /var/tmp/fstab
+- the user “harry” can neither write nore read /var/tmp/fstab
+- all other users (current or future) have the ability to read /var/tmp/fstab

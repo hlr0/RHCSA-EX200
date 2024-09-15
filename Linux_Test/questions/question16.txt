@@ -1,0 +1,5 @@
+Question 16: (FIND)
+========================
+Find all the .txt file extensions and NOT directories for the user “root” with the permission
+of “rw-r—r--” with a size of more than 1Mb and less than 30Mb and copy it into
+“/share/txtfiles/” directory

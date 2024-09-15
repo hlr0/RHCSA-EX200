@@ -1,0 +1,4 @@
+Question 18: (USERS)
+========================
+Create a user “unilao” with UID “2334” with password as “ablerate”
+- change natasha user to the accounting group

@@ -1,0 +1,6 @@
+Question 3: (REPO)
+========================
+Configure your repository for installing the packages distribution which is available via
+YUM / DNF ; Exam can be ftp or file or https for the repos.
+Base os url = file:///mnt/repo/BaseOS
+App stream url = file:///mnt/repo/AppStream

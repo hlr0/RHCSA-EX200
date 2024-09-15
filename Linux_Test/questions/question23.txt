@@ -1,0 +1,3 @@
+Question 23: (SWAP)
+========================
+Create a swap partition of 400MB and make it available permanent

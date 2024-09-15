@@ -1,0 +1,4 @@
+Question 12: (create archive)
+========================
+create a tar archive of “/etc/” Directory with .bzip2 extension. Tar archive named
+“myetcbackup.tar” should be placed in “/root/” directory

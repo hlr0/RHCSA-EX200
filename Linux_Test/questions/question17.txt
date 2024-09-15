@@ -1,0 +1,4 @@
+Question 17: (GREP/eGREP)
+========================
+Find all strings “ich” AND “stratisd” from “/usr/share/dict/words” file and copy that strings in
+a “/root/lines” file

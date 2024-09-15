@@ -1,0 +1,7 @@
+Question 15: (NTP)
+========================
+Configure your system to synchronize the time from one or all of the NTP servers
+- 0.africa.pool.ntp.org
+- 1.africa.pool.ntp.org
+- 2.africa.pool.ntp.org
+- 3.africa.pool.ntp.org

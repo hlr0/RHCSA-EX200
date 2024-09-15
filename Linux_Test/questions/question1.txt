@@ -1,0 +1,9 @@
+Question 1: (NMCLI - IPV4)
+=================================
+Configure TCP/IP and “hostname” as following – for ipv4 ...
+
+IP ADDRESS = 192.168.0.(94 or 90) == e.g(172.25.X.11) X is your seat number in exam
+NETMASK = 255.255.255.0
+GATEWAY = 192.168.0.1 ==== e.g(172.25.X.254)
+DNS  = 8.8.8.8 ------ e.g(172.25.254.254)
+Hostname  = serverX.example.com

@@ -1,0 +1,9 @@
+Question 21: (Containers manage)
+========================
+Configure a container to start automatically
+- create a container named mycontainer using the image which you build previously
+- configure the service to automatically mount the directory “/opt/file” to container directory
+“/opt/incoming” and user directory “/opt/processed” to container directory “/opt/output”
+- configure to run it as a systemd service that should run from existing user xanadu only
+- the service should be named mycontainer and should automatically start at system rebot
+without any manual intervention.

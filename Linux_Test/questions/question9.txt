@@ -1,0 +1,8 @@
+Question 9: ( SUID / SGID / STICKYBIT)
+========================
+create a collaborative directory /shared/"sysadm" with the following characteristics:
+- Group ownership of “/shared/sysadm/” is "sysadm"
+- The directory should be readable, writable, and accessible to member of "sysadm", but not to any other user -- (it is understood that root has access to all files and directories on the system)
+- Files created in “/shared/sysadm” automatically have group ownership set to the "sysadm" group
+- Only members of the accounting group should have access to the “/accounting” directory. Make laura the owner of the this directory. Make the accounting group the group owner of the accounting directory
+- Only members of the marketing group should have access to the “/marketing” directory. Make steward the owner of this directory. Make the marketing group the group owner of the “/marketing” directory

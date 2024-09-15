@@ -1,0 +1,7 @@
+Question 14: (BASH)
+========================
+Write a script named awesome.sh in the root directory on the system
+-- if “me” is given as an argument then the script should ouput “Yes Im Awesome”
+-- if “them” is given as an argument then the script should ouput “Okay they are Awesome”
+-- if the argument is empty or anything else is given then the script should ouput
+“Usage ./awesome.sh me|them”

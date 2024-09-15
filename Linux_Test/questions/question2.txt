@@ -1,0 +1,4 @@
+Question 2: (NMCLI - IPV6)
+============================
+Add the following secondary IP address statically to your current setup. Do this in a way
+that doesn’t compromise your existing settings --- IPV6 ---- fd01::100/64

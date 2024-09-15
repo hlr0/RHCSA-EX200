@@ -1,0 +1,11 @@
+Question 6: (SELINUX)
+========================
+Configure a basic web server that displays “Welcome to the Jungle” once connected and
+make it listen on port 82
+
+SELINUX – make sure selinux is in enforcing mode
+SELINUX BOOLEAN – ensure the httpd is able to access the user home directory
+SELINUX PORT – the system is not able to connect to httpd service port 82 it should be
+accessible at port 82 and should start at boot time
+SELINUX CONTEXT – Ensure that the httpd service is able to access and host files from
+the /test directory – not from /var/www/html

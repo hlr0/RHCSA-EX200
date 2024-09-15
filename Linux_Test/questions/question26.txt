@@ -1,0 +1,6 @@
+Question 26: (STRATIS)
+========================
+Create a file system from a stratis named “pool1”
+- extend the stratis “pool1” by 2Gb
+- create a secondary filesystem on “pool1”
+- make all permanent

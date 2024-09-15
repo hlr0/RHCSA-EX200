@@ -1,1 +1,5 @@
-xx
+Question 0: (root Passwd)
+========================
+Interrupt the boot process and reset the root password. Change it to “wander” to gain
+access to the system make sure that settings do not change make sure that SELinux is
+enforcing

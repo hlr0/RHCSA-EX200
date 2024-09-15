@@ -1,0 +1,5 @@
+Question 7: (UMASK)
+========================
+set the default permission for user alex and for all newly created file and folders
+- set the permission for all newly created files == r- - r- -r- -
+- set the permission for all newly created directories == r-xr-xr-x

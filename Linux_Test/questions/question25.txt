@@ -1,0 +1,10 @@
+Question 25: (LVM CREATE / EXTEND / REDUCE)
+========================
+Create a new 2Gb volume group name “vgprac” with the size of the PE at 8Mb
+- Create a 500mb logical volume name “lvprac” inside the “vgprac” volume group
+- Create a logical volume name “lvpracext” with 30 extent inside the “vgprac” volume group
+- The “lvprac” logical volume should be formatted with the “xfs” filesystem and mounted persistently on the /mnt/lvprac directory
+- The “lvpracext” logical volume should be formatted with the “ext4” filesystem and mounted persistently on the “/mnt/lvpracext” directory
+- Extend the “xfs” filesystem on lvprac by 500mb
+- Reduce the size of the “ext4” filesystem on lvpracext by 100mb
+-make all permanent

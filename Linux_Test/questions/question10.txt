@@ -1,0 +1,5 @@
+Question 10: (CRONS)
+========================
+Set the following cron jobs for the user “Natasha”
+- that should run daily every 1 minutes local time and executes “Ex200 Testing” with logger
+- that should run at 14:30 everyday with echo the words : hello world
