@@ -1,0 +1,3 @@
+Question 34: (scp / Rsync)
+========================
+Secure copy the repo file to server2.
