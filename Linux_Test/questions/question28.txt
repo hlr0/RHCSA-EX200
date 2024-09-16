@@ -1,0 +1,3 @@
+Question 28:
+=================================
+On server1, start one stress-ng process with the niceness value of 19. Adjust the niceness value of the stress process to 10. Kill the stress process.
