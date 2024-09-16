@@ -1,0 +1,7 @@
+Question 30:
+========================
+Write a script named awesome.sh in the root directory on server1.
+
+a) If “me” is given as an argument, then the script should output “Yes, I’m awesome.”
+b) If “them” is given as an argument, then the script should output “Okay, they are awesome.”
+c) If the argument is empty or anything else is given, the script should output “Usage ./awesome.sh me|them”
