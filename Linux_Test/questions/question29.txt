@@ -1,0 +1,3 @@
+Question 29: (chroot)
+========================
+Setup a chroot enviroment so that you can do an update to the system.
