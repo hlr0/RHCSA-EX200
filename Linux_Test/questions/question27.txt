@@ -1,0 +1,4 @@
+Question 27: (root Passwd)
+========================
+On server1 create a folder called /links, and under links create a file called file01. 
+Create a soft link called file02 pointing to file01, and a hard link called file03 pointing to file01. Check your work.
