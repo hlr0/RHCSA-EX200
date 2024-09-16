@@ -1,0 +1,3 @@
+Question 31: (umask)
+========================
+Configure both servers to create files with 660 permissions by default.
