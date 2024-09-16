@@ -1,0 +1,3 @@
+Question 35:
+========================
+On server1 create a star w/bzip2 archive of /usr/share/doc called doc_archive.star.bz2 in the /archives directory.
