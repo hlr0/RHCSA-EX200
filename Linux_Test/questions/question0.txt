@@ -2,6 +2,6 @@ Question 0: (root Passwd)
 ========================
 Interrupt the boot process and reset the root password. Change it to “wander” to gain
 access. Set the target as multi-user and make sure it boots into that automatically. 
-Make sure that settings do not change make sure that SELinux is enforcing.
+Make sure that SELinux is enforcing.
 Reboot to confirm.
 
