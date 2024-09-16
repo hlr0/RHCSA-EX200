@@ -1,0 +1,3 @@
+Question 32: (setuid)
+========================
+Find all setuid files on server1 and save the list to /root/suid.txt.
