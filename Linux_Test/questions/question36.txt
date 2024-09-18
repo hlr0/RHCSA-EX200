@@ -1,0 +1,3 @@
+Question 36: (pkill / pgrep)
+========================
+how would find and kill the [[ user ]] and all its process in linux 

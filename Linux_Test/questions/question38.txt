@@ -1,0 +1,3 @@
+Question 38:
+========================
+What does the /usr folder in linux mean ...

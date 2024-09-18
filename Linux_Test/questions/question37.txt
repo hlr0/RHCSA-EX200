@@ -1,0 +1,3 @@
+Question 37: ( man man )
+========================
+how would you search all the man pages in all categories for the pkill command
