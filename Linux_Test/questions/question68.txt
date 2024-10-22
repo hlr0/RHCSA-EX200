@@ -1,0 +1,78 @@
+Question:
+
+Task 10 [Configuring NTP/Time Synchronization]
+
+Configure your system so that it is an NTP client of utility.domain15.example.com
+
+The system time should be set to your (or nearest to you) timezone and ensure NTP sync is configured
+
+
+
+
+Answer:
+
+[root@node1 ~]# yum install chrony
+
+[root@node1 ~]# vim /etc/chrony.conf
+
+pool utility.domain15.example.com iburst
+
+[root@node1 ~]# systemctl enable chronyd
+
+[root@node1 ~]# systemctl restart chronyd
+
+[root@node1 ~]# systemctl status chronyd
+
+[root@node1 ~]# tzselect
+
+Please identify a location so that time zone rules can be set correctly.
+
+Please select a continent, ocean, "coord", or "TZ".
+
+1) Africa
+
+2) Americas
+
+3) Antarctica
+
+4) Asia
+
+11) TZ - I want to specify the time zone using the Posix TZ format.
+
+#? 4
+
+*
+
+Please select a country whose clocks agree with yours.
+
+1) Afghanistan 18) Israel 35) Palestine
+
+2) Armenia 19) Japan 36) Philippines
+
+3) Azerbaijan 20) Jordan 37) Qatar
+
+4) Bahrain 21) Kazakhstan 38) Russia
+
+5) Bangladesh 22) Korea (North) 39) Saudi Arabia
+
+#? 5
+
+The following information has been given:
+
+Bangladesh
+
+Therefore TZ='Asia/Dhaka' will be used.
+
+Is the above information OK?
+
+1) Yes
+
+2) No
+
+#? 1
+
+Asia/Dhaka
+
+[root@node1 ~]# chronyc sources -v
+
+^? utility.domain15.example> 0 7 0 - +0ns[ +0ns] +/- 0ns

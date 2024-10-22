@@ -1,0 +1,31 @@
+Question:
+
+Create a volume group, and set 8M as a extends. Divided a volume group containing 50 extends on volume group lv (lvshare), make it as ext4 file system, and mounted automatically under /mnt/data. And the size of the floating range should set between 380M and 400M.
+
+
+
+
+
+Answer:
+
+# fdisk
+
+# partprobe
+
+# pvcreate /dev/vda6
+
+# vgcreate -s 8M vg1 /dev/vda6 -s
+
+# lvcreate -n lvshare -l 50 vg1 -l
+
+# mkfs.ext4 /dev/vg1/lvshare
+
+# mkdir -p /mnt/data
+
+# vim /etc/fstab
+
+/dev/vg1/lvshare /mnt/data ext4 defaults 0 0
+
+# mount -a
+
+# df -h

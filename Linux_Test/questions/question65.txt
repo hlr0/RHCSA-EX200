@@ -1,0 +1,17 @@
+Question:
+
+You have a domain named www.rhce.com associated IP address is 192.100.0.2. Configure the Apache web server by implementing the SSL for encryption communication.
+
+
+
+
+Answer:
+
+vi /etc/httpd/conf.d/ssl.conf ServerName www.rhce.com DocumentRoot /var/www/rhce DirectoryIndex index.html index.htm ServerAdmin webmaster@rhce.com SSLEngine on SSLCertificateFile /etc/httpd/conf/ssl.crt/server.crt SSLCertificateKeyFile /etc/httpd/conf/ssl.key/server.key
+cd /etc/httpd/conf
+3 make testcert
+
+Create the directory and index page on specified path. (Index page can download from ftp://server1.example.com at exam time)
+service httpd start|restart
+chkconfig httpd on
+Apache can provide encrypted communications using SSL (Secure Socket Layer). To make use of encrypted communication, a client must request to https protocol, which is uses port 443. For HTTPS protocol required the certificate file and key file.

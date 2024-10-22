@@ -1,0 +1,18 @@
+Question:
+
+
+Configure your web services, download from http://instructor.example.com/pub/serverX.html And the services must be still running after system rebooting.
+
+
+
+
+
+
+Answer: 
+
+
+cd /var/www/html
+
+wget http://instructor.example.com/pub/serverX.html mv serverX.html index.html /etc/init.d/httpd restart
+
+chkconfig httpd on

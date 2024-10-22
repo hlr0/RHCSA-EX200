@@ -1,0 +1,20 @@
+Question:
+
+
+Configure the system synchronous as 172.24.40.10.
+
+
+
+
+
+
+Answer:
+
+
+Graphical Interfaces:
+
+System-->Administration-->Date & Time
+
+OR
+
+# system-config-date

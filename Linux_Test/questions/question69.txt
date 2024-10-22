@@ -1,0 +1,9 @@
+Question:
+
+Add admin group and set gid=600
+
+
+
+Answer:
+
+groupadd -g 600 admin

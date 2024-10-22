@@ -1,0 +1,16 @@
+Question:
+Create a user fred with a user ID 3945. Give the password as iamredhatman
+
+
+
+
+
+
+Answer:
+[root@node1 ~]# useradd -u 3945 fred
+
+[root@node1 ~]# echo "iamredhatman" | passwd --stdin fred
+
+Changing password for user fred.
+
+passwd: all authentication tokens updated successfully

@@ -1,0 +1,53 @@
+Question:
+
+Create the following users, groups and group memberships:
+
+A group named sharegrp
+
+A user harry who belongs to sharegrp as a secondary group
+
+A user natasha who also belongs to sharegrp as a secondary group
+
+A user copper who does not have access to an interactive shell on the system and who is not a member of sharegrp.
+
+harry, natasha and copper should have the password redhat
+
+
+
+
+
+
+
+Answer:
+
+ [root@node1 ~]# groupadd sharegrp
+
+[root@node1 ~]# useradd harry
+
+[root@node1 ~]# useradd natasha
+
+[root@node1 ~]# usermod -aG sharegrp harry
+
+[root@node1 ~]# usermod -aG sharegrp natasha
+
+[root@node1 ~]# useradd -s /sbin/nologin copper
+
+[root@node1 ~]# echo "redhat" | passwd --stdin harry
+
+[root@node1 ~]# echo "redhat" | passwd --stdin natasha
+
+[root@node1 ~]# echo "redhat" | passwd --stdin copper
+
+### For Checking ###
+
+[root@node1 ~]# su - copper
+
+This account is currently not available.
+
+[root@node1 ~]# su - natasha
+
+[root@node1 ~]# id
+
+[root@node1 ~]# su - harry
+
+[root@node1 ~]# id

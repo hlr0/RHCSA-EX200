@@ -1,0 +1,42 @@
+Question:
+Add a new logical partition having size 100MB and create the data which will be the mount point for the new partition.
+
+
+
+
+
+
+Answer:
+1. Use fdisk /dev/hda-> To create new partition.
+
+2. Type n ->For New partitions
+
+3. It will ask for Logical or Primary Partitions. Press l for logical.
+
+4. It will ask for the Starting Cylinder: Use the Default by pressing Enter
+
+Keys
+
+5. Type the size: +100M you can specify either Last cylinder of size here.
+
+6. Press P to verify the partitions lists and remember the partitions name.
+
+7. Press w to write on partitions table.
+
+8. Either Reboot or use partprobe command.
+
+9. Use mkfs -t ext3 /dev/hda?
+
+OR
+
+1. mke2fs -j /dev/hda? ->To create ext3 filesystem.
+
+2. vi /etc/fstab
+
+3. Write:
+
+/dev/hda? /data ext3 defaults 0 0
+
+4. Verify by mounting on current sessions also:
+
+mount /dev/hda? /data

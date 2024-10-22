@@ -1,0 +1,28 @@
+Question:
+
+Create the following users, groups, and group memberships:
+
+A group named adminuser.
+
+A user natasha who belongs to adminuser as a secondary group A user harry who also belongs to adminuser as a secondary group.
+
+A user sarah who does not have access to an interactive shell on the system, and who is not a member of adminuser, natasha, harry, and sarah should all have the password of redhat.
+
+
+
+
+
+Answer
+
+groupadd sysmgrs
+useradd -G sysmgrs Natasha
+We can verify the newly created user by cat /etc/passwd)
+# useradd -G sysmgrs harry
+
+# useradd -s /sbin/nologin sarrh
+
+# passwd Natasha
+
+# passwd harry
+
+# passwd sarrah

@@ -1,0 +1,13 @@
+Question:
+
+Configure iptables, there are two domains in the network, the address of local domain is 172.24.0.0/16 other domain is 172.25.0.0/16, now refuse domain 172.25.0.0/16 to access the server.
+
+
+
+
+Answer
+iptables -F
+service iptables save
+iptables -A INPUT -s 172.25.0.0/16 -j REJECT
+service iptables save
+service iptables restart

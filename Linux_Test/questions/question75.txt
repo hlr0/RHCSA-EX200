@@ -1,0 +1,29 @@
+Question:
+
+Create User Account.
+
+Create the following user, group and group membership:
+
+Adminuser group
+
+User natasha, using adminuser as a sub group
+
+User Harry, also using adminuser as a sub group
+
+User sarah, can not access the SHELL which is interactive in the system, and is not a member of adminuser, natasha，harry，sarah password is redhat.
+
+
+
+
+
+Answer:
+
+groupadd adminuser
+
+useradd natasha -G adminuser
+
+useradd haryy -G adminuser
+
+useradd sarah -s /sbin/nologin
+
+Passwd user name // to modify password or echo redhat | passwd --stdin user name id natasha // to view user group.

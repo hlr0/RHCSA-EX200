@@ -1,0 +1,47 @@
+Question:
+Configure your Host Name, IP Address, Gateway and DNS.
+
+Host name: station.domain40.example.com
+
+/etc/sysconfig/network
+
+hostname=abc.com
+
+hostname abc.com
+
+IP Address:172.24.40.40/24
+
+Gateway172.24.40.1
+
+DNS:172.24.40.1
+
+
+
+
+
+
+
+Answer:
+# cd /etc/syscofig/network-scripts/
+
+# ls
+
+# vim ifcfg-eth0 (Configure IP Address, Gateway and DNS) IPADDR=172.24.40.40
+
+GATEWAY=172.24.40.1
+
+DNS1=172.24.40.1
+
+# vim /etc/sysconfig/network
+
+(Configure Host Name)
+
+HOSTNAME= station.domain40.example.com
+
+OR
+
+Graphical Interfaces:
+
+System->Preference->Network Connections (Configure IP Address, Gateway and DNS) Vim /etc/sysconfig/network
+
+(Configure Host Name)

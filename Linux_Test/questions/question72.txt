@@ -1,0 +1,16 @@
+Question:
+
+Create a backup file named /root/backup.tar.bz2, which contains the contents of /usr/local, bar must use the bzip2 compression.
+
+
+
+
+Answer:
+
+cd /usr/local
+
+tar -jcvf /root/backup.tar.bz2*
+
+mkdir /test
+
+tar -jxvf /root/backup.tar.bz2 -C /test/

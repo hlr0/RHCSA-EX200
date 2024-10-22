@@ -1,0 +1,41 @@
+Question:
+
+Create a 2G swap partition which take effect automatically at boot-start, and it should not affect the original swap partition.
+
+
+
+Answer:
+
+# fdisk /dev/sda
+
+p
+
+(check Partition table)
+
+n
+
+(create new partition: press e to create extended partition, press p to create the main partition, and the extended partition is further divided into logical partitions) Enter
+
++2G
+
+t
+
+l
+
+W
+
+partx -a /dev/sda
+
+partprobe
+
+mkswap /dev/sda8
+
+Copy UUID
+
+swapon -a
+
+vim /etc/fstab
+
+UUID=XXXXX swap swap defaults 0 0
+
+(swapon -s)

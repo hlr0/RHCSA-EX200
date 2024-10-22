@@ -1,0 +1,16 @@
+Question:
+One Package named zsh is dump on ftp://server1.example.com under /pub/updates directory and your FTP server is 192.168.0.254. Install the package zsh.
+
+
+
+Answer:
+rpm -ivh ftp://server1/example.com/pub/updates/zsh-*
+or
+
+Login to ftp server : ftp ftp://server1.example.com using anonymous user.
+Change the directory: cd pub and cd updates
+Download the package: mget zsh-*
+Quit from the ftp prompt : bye
+Install the package
+rpm -ivh zsh-*
+Verify either package is installed or not : rpm -q zsh

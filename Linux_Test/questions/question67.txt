@@ -1,0 +1,90 @@
+Question:
+
+Task 4 [Managing Logical Volumes]
+
+Resize the logical volume, lvrz and reduce filesystem to 4600 MiB. Make sure the the filesystem contents remain intact with mount point /datarz
+
+(Note: partitions are seldom exactly the size requested, so anything within the range of 4200MiB to 4900MiB is acceptable)
+
+
+
+
+
+Answer:
+
+
+[root@node2 ~]# lsblk
+
+NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+
+vdb 252:16 0 5G 0 disk
+
+└─vdb1 252:17 0 4.2G 0 part
+
+└─vgrz-lvrz 253:2 0 4.1G 0 lvm /datarz
+
+vdc 252:32 0 5G 0 disk
+
+└─vdc1 252:33 0 4.4G 0 part
+
+└─datavg-datalv 253:3 0 3.9G 0 lvm /data
+
+vdd 252:48 0 5G 0 disk
+
+vde 252:64 0 10G 0 disk
+
+[root@node2 ~]# lvs
+
+LV VG Attr LSize Pool Origin Data% Meta% Move Log Cpy%Sync Convert
+
+lvrz vgrz -wi-ao---- 4.10g
+
+[root@node2 ~]# vgs
+
+VG #PV #LV #SN Attr VSize VFree
+
+vgrz 1 1 0 wz--n- <4.15g 48.00m
+
+[root@node2 ~]# parted /dev/vdb print
+
+Number Start End Size Type File system Flags
+
+1 1049kB 4456MB 4455MB primary lvm
+
+*
+
+[root@node2 ~]# df -hT
+
+Filesystem Type Size Used Avail Use% Mounted on
+
+/dev/mapper/vgrz-lvrz ext4 4.0G 17M 3.8G 1% /datarz
+
+[root@node2 ~]# parted /dev/vdb mkpart primary 4456MiB 5100MiB
+
+[root@node2 ~]# parted /dev/vdb set 2 lvm on
+
+[root@node2 ~]# udevadm settle
+
+[root@node2 ~]# pvcreate /dev/vdb2
+
+Physical volume "/dev/vdb2" successfully created.
+
+*
+
+[root@node2 ~]# vgextend vgrz /dev/vdb2
+
+Volume group "vgrz" successfully extended
+
+[root@node2 ~]# lvextend -r -L 4600M /dev/vgrz/lvrz
+
+Size of logical volume vgrz/lvrz changed from 4.10 GiB (1050 extents) to 4.49 GiB (1150 extents).
+
+Logical volume vgrz/lvrz successfully resized.
+
+[root@node2 ~]# resize2fs /dev/vgrz/lvrz
+
+[root@node2 ~]# df -hT
+
+Filesystem Type Size Used Avail Use% Mounted on
+
+/dev/mapper/vgrz-lvrz ext4 4.4G 17M 4.2G 1% /datarz

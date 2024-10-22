@@ -1,0 +1,26 @@
+Question:
+
+Add a swap partition.
+
+Adding an extra 500M swap partition to your system, this swap partition should mount automatically when the system starts up. Don't remove and modify the existing swap partitions on your system.
+
+
+
+
+Answer:
+
+fdisk -cu /dev/vda// in the way of expanding the partition, don’t make main partition
+
+partx –a /dev/vda
+
+mkswap /dev/vdax
+
+swapon /dev/vdax
+
+swapon –s
+
+vi /etc/fstab
+
+/dev/vdaxswapswapdefaults0 0
+
+mount -a

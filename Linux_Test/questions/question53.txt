@@ -1,0 +1,24 @@
+Question:
+
+There are two different networks, 192.168.0.0/24 and 192.168.1.0/24. Your System is in 192.168.0.0/24 Network. One RHEL6 Installed System is going to use as a Router. All required configuration is already done on Linux Server. Where 192.168.0.254 and 192.168.1.254 IP Address are assigned on that Server. How will make successfully ping to 192.168.1.0/24 Network's Host?
+
+
+Anwser:
+
+vi /etc/sysconfig/network GATEWAY=192.168.0.254
+OR
+
+vi /etc/sysconf/network-scripts/ifcfg-eth0 DEVICE=eth0
+
+BOOTPROTO=static
+
+ONBOOT=yes
+
+IPADDR=192.168.0.?
+
+NETMASK=255.255.255.0
+
+GATEWAY=192.168.0.254
+
+service network restart
+Gateway defines the way to exit the packets. According to question System working as a router for two networks have IP Address 192.168.0.254 and 192.168.1.254.

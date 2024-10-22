@@ -1,0 +1,19 @@
+Question:
+
+Download ftp://192.168.0.254/pub/boot.iso to /root, and mounted automatically under /media/cdrom and which take effect automatically at boot-start.
+
+
+
+Answer: 
+
+# cd /root; wget ftp://192.168.0.254/pub/boot.iso
+
+# mkdir -p /media/cdrom
+
+# vim /etc/fstab
+
+/root/boot.iso /media/cdrom iso9660 defaults,loop 0 0
+
+# mount -a
+
+mount [-t vfstype] [-o options] device dir

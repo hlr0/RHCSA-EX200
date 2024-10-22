@@ -1,0 +1,14 @@
+Question:
+There is a local logical volumes in your system, named with common and belong to VGSRV volume group, mount to the /common directory. The definition of size is 128 MB.
+
+Requirement:
+
+Extend the logical volume to 190 MB without any loss of data. The size is allowed between 160-160 MB after extending.
+
+
+
+
+
+
+Answer:
+lvextend -L 190M /dev/mapper/vgsrv-common resize2fs /dev/mapper/vgsrv-common

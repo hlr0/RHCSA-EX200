@@ -1,0 +1,27 @@
+Question:
+
+Find all the files owned by user natasha and redirect the output to /home/alex/files.
+
+Find all files that are larger than 5MiB in the /etc directory and copy them to /find/largefiles.
+
+
+
+Answer:
+
+[root@node1 ~]# find / -name natasha -type f > /home/natasha/files
+
+[root@node1 ~]# cat /home/natasha/files
+
+/var/spool/mail/natasha
+
+/mnt/shares/natasha
+
+[root@node1 ~]# mkdir /find
+
+[root@node1 ~]# find /etc -size +5M > /find/largefiles
+
+[root@node1 ~]# cat /find/largefiles
+
+/etc/selinux/targeted/policy/policy.31
+
+/etc/udev/hwdb.bin

@@ -1,0 +1,66 @@
+Question:
+
+Copy the file /etc/fstab to /var/tmp. Configure the following permissions on /var/tmp/fstab.
+
+The file /var/tmp/fstab is owned by root user
+
+The file /var/tmp/fstab is belongs to the root group
+
+The file /var/tmp/fstab should be executable by anyone
+
+The user harry is able to read and write on /var/tmp/fstab
+
+The user natasha can neither read or write on /var/tmp/fstab
+
+All other users (Current or future) have the ability to read /var/tmp/fstab
+
+
+
+
+
+
+Answer:
+
+[root@node1 ~]# cp -p /etc/fstab /var/tmp/
+
+[root@node1 ~]# ls -lrt /etc/fstab
+
+[root@node1 ~]# ls -lrt /var/tmp/fstab
+
+[root@node1 ~]# chmod a+x /var/tmp/fstab
+
+[root@node1 ~]# getfacl /var/tmp/fstab
+
+[root@node1 ~]# setfacl -m u:harry:rw- /var/tmp/fstab
+
+[root@node1 ~]# setfacl -m u:natasha:--- /var/tmp/fstab
+
+[root@node1 ~]# getfacl /var/tmp/fstab
+
+getfacl: Removing leading '/' from absolute path names
+
+# file: var/tmp/fstab
+
+# owner: root
+
+# group: root
+
+user::rwx
+
+user:harry:rw-
+
+user:natasha:---
+
+group::r-x
+
+mask::rwx
+
+other::r-x
+
+*
+
+[root@node1 ~]# su - natasha
+
+[natasha@node1 ~]$ cat /var/tmp/fstab
+
+cat: /var/tmp/fstab: Permission denied

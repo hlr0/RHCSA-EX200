@@ -1,0 +1,26 @@
+Question:
+
+Binding to an external validation server.
+
+System server.domain11.example.com provides a LDAP validation service, your system should bind to this service as required:
+
+Base DN of validation service is dc=example,dc=com
+
+LDAP is used for providing account information and validation information Connecting and using the certification of http://server.domain11.example.com/pub/EXAMPLE-CA-CERT to encrypt
+
+After the correct configuration, ldapuser1 can log into your system, it does not have HOME directory until you finish autofs questions, ldapuser1 password is password.
+
+
+
+
+
+Answer
+yum -y install sssd authconfig-gtk krb5-workstation authconfig-gtk // open the graphical interface
+
+Modify user account database to ldap, fill up DN and LDAP SERVER as questions required, use TLS to encrypt connections making tick, write http://server.domain11.example.com/pub/EXAMPLE-CA-CERT to download ca, authentication method choose ldap password.
+
+You can test if the ldapuser is added by the following command:
+
+Id ldapuser1
+
+Note: user password doesn’t not need to set

@@ -1,0 +1,17 @@
+Question:
+Configure a task: plan to run echo hello command at 14:23 every day.
+
+
+
+
+
+
+
+Answer:
+# which echo
+
+# crontab -e
+
+23 14 * * * /bin/echo hello
+
+# crontab -l (Verify)

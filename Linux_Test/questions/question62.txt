@@ -1,0 +1,42 @@
+Question:
+
+Add an additional swap partition of 754 MB to your system.
+
+The swap partition should automatically mount when your system boots.
+
+Do not remove or otherwise alter any existing swap partitions on your system
+
+
+
+
+Answer:
+
+Explanation:
+fdisk -l
+fdisk -cu /dev/vda
+p n
+
+e or p select e
+
+default (first): enter
+
+default (last): enter n
+
+default(first): enter
+
+default(first): +754M t (1-5)
+
+l: 82 p
+
+w #reboot
+
+#mkswap /dev/vda5
+
+vim /etc/fstab
+/dev/vda5 swap swap defaults 0 0
+
+wq
+
+mount -a
+swapon -a
+swapon -s

@@ -1,0 +1,16 @@
+Question:
+
+1. Find all sizes of 10k file or directory under the /etc directory, and copy to /tmp/findfiles directory.
+
+2. Find all the files or directories with Lucy as the owner, and copy to /tmp/findfiles directory.
+
+
+
+Answer:
+
+
+(1)find /etc -size 10k -exec cp {} /tmp/findfiles \;
+
+(2)find / -user lucy -exec cp -a {} /tmp/findfiles \;
+
+Note: If find users and permissions, you need to use cp - a options, to keep file permissions and user attributes etc.

@@ -1,0 +1,32 @@
+Question:
+
+Resize the logical volume vo and its filesystem to 290 MB. Make sure that the filesystem contents remain intact.
+
+Note: Partitions are seldom exactly the same size requested, so a size within the range of 260 MB to 320 MiB is acceptable.
+
+
+
+Answer:
+
+
+df -hT
+
+lvextend -L +100M /dev/vg0/vo
+
+lvscan
+
+xfs_growfs /home/ // home is LVM mounted directory
+
+Note: This step is only need to do in our practice environment, you do not need to do in the real exam
+
+resize2fs /dev/vg0/vo // Use this comand to update in the real exam df -hT
+
+OR
+
+e2fsck -f/dev/vg0/vo
+
+umount /home
+
+resize2fs /dev/vg0/vo required partition capacity such as 100M lvreduce -l 100M /dev/vg0/vo mount /dev/vg0/vo /home
+
+df –Ht

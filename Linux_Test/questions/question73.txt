@@ -1,0 +1,25 @@
+Question:
+
+A YUM source has been provided in the
+
+http://instructor.example.com/pub/rhel6/dvd
+
+Configure your system and can be used normally.
+
+
+
+
+
+Answer:
+
+Explanation:
+/etc/yum.repos.d/base.repo
+[base]
+
+name=base
+
+baseurl=http://instructor.example.com/pub/rhel6/dvd
+
+gpgcheck=0
+
+yum list

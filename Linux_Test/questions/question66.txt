@@ -1,0 +1,86 @@
+Question:
+
+Task 16 [Running Containers]
+
+Configure your host journal to store all journal across reboot
+
+Copy all journal files from /var/log/journal/ and put them in the /home/shangrila/container-logserver
+
+Create and mount /home/shangrila/container-logserver as a persistent storage to the container as /var/log/ when container start
+
+
+
+
+
+Answer:
+
+
+[shangrila@node1 ~]$ podman ps
+
+CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+
+d5ffe018a53c registry.domain15.example.com:5000/rhel8/rsyslog:latest /bin/rsyslog.sh 5 seconds ago Up 4 seconds ago logserver
+
+[shangrila@node1 ~]$ podman stats logserver
+
+Error: stats is not supported in rootless mode without cgroups v2
+
+[shangrila@node1 ~]$ podman stop logserver
+
+d5ffe018a53ca7eb075bf560d1f30822ab6fe51eba58fd1a8f370eda79806496
+
+[shangrila@node1 ~]$ podman rm logserver
+
+Error: no container with name or ID logserver found: no such container
+
+[shangrila@node1 ~]$ mkdir -p container-journal/
+
+*
+
+[shangrila@node1 ~]$ sudo systemctl restart systemd-journald
+
+[sudo] password for shangrila:
+
+[shangrila@node1 ~]$ sudo cp -av /var/log/journal/* container-journal/
+
+[shangrila@node1 ~]$ sudo cp -av /var/log/journal/* container-journal/
+
+[shangrila@node1 ~]$ sudo chown -R shangrila container-journal/
+
+[shangrila@node1 ~]$ podman run -d --name logserver -v /home/shangrila/container-journal/:/var/log/journal:Z registry.domain15.example.com:5000/rhel8/rsyslog
+
+[shangrila@node1 ~]$ podman ps
+
+[shangrila@node1 ~]$ loginctl enable-linger
+
+[shangrila@node1 ~]$ loginctl show-user shangrila|grep -i linger
+
+Linger=yes
+
+*
+
+[shangrila@node1 ~]$ podman stop logserver
+
+[shangrila@node1 ~]$ podman rm logserver
+
+[shangrila@node1 ~]$ systemctl --user daemon-reload
+
+[shangrila@node1 ~]$ systemctl --user enable --now container-logserver
+
+[shangrila@node1 ~]$ podman ps
+
+CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+
+3903e1d09170 registry.domain15.example.com:5000/rhel8/rsyslog:latest /bin/rsyslog.sh 4 seconds ago Up 4 seconds ago logserver
+
+[shangrila@node1 ~]$ systemctl --user stop container-logserver.service
+
+*
+
+[shangrila@node1 ~]$ sudo reboot
+
+[shangrila@node1 ~]$ podman ps -a
+
+CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+
+7e6cd59c506a registry.domain15.example.com:5000/rhel8/rsyslog:latest /bin/rsyslog.sh 10 seconds ago Up 9 seconds ago logserver

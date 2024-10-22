@@ -1,0 +1,8 @@
+Question:
+Create a swap space, set the size is 600 MB, and make it be mounted automatically after rebooting the system (permanent mount).
+
+Answer:
+if=/dev/zero of=/swapfile bs=1M count=600 mkswap /swapfile
+/etc/fstab:
+
+/swapfile swap swap defaults 0 0 mount -a
